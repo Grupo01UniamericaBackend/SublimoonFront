@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/Usuario',
     name: 'Pagina do Usuario',
     component: () => import('../views/UserView.vue')
+  },
+  {
+    path: '/CadastrarProduto',
+    name: 'Cadastrar produto',
+    component: () => import('../views/ProdutoView.vue/ProdutoCad.vue')
   }
 ]
 
