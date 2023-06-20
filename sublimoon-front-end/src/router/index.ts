@@ -3,11 +3,6 @@ import HomeView from '../views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -16,9 +11,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/paginaInicial',
+    path: '/',
     name: 'Pagina Inicial',
-    component: () => import('../views/PgInicialView.vue')
+    component: () => import('@/views/PgInicialView.vue')
+  },
+  {
+    path: '/Usuario',
+    name: 'Pagina do Usuario',
+    component: () => import('../views/UserView.vue')
   }
 ]
 
