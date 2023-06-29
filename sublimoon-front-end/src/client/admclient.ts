@@ -54,3 +54,5 @@ import { Adm } from '@/model/adm';
 
 
     }
+
+    export default new AdmClient();
