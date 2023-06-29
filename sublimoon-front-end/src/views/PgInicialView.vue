@@ -1,5 +1,5 @@
 <template>
-     <div class="eita">S</div>
+     <div class="eita"></div>
 </template>
 
 <script lang="ts">

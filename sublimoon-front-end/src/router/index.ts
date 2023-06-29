@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/CadastrarProduto',
-    name: 'Cadastrar produto',
+    name: 'cadastar-produto-view',
     component: () => import('../views/ProdutoView.vue/ProdutoCad.vue')
   }
 ]
