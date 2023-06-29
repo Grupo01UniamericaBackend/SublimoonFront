@@ -1,5 +1,6 @@
 import { AbstractEntity } from "./abstract-entity";
 import { Carrinho } from "./carrinho";
+import { Envio } from "./envio";
 
 export class Pedido extends AbstractEntity{
 
@@ -9,4 +10,8 @@ export class Pedido extends AbstractEntity{
     cep!: String;
 
     carrinho?: Carrinho;
+
+    envio?: Envio;
+
+    
 }
