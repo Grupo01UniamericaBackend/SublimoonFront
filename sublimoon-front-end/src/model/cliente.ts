@@ -8,9 +8,9 @@ export class Cliente extends AbstractEntity{
     telefone!: String;
     email!: String;
 
-    favorito?: Favorito;
+   // favorito?: Favorito;
 
-    carrinho?: Carrinho;
+    //carrinho?: Carrinho;
 
     nome!: String;
     senha!: String;
