@@ -4,7 +4,7 @@ import { Produto } from "./produto";
 
 export class Favorito extends AbstractEntity{
     
-    produtoId?: number;
+    //produtoId?: number;
 
     produtos?: Produto;
 
