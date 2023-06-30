@@ -18,6 +18,7 @@
             <router-link to="" class="icons">💙</router-link>
             <router-link to="/Usuario" class="icons">👤</router-link>
          </nav>
+         <div class="barra"></div>
          <router-view/>
     </header>
 </template>
@@ -92,5 +93,8 @@ nav {
   padding: 0.4% 0.4%;
   border-radius: 8px;
 }
-
+.barra{
+  background-color: #3463a3;
+  height: 25px;
+}
 </style>
