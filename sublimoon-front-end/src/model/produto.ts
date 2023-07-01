@@ -13,14 +13,14 @@ export class Produto extends AbstractEntity{
 
     cor!: Cor;
     descricao!: String;
-    //image?:String;
+    imagem!: String;
     preco!: Float32Array;
     quantidade!: Int16Array;
 
     avaliacao?: Avaliacao;
 
-    pesoProduto!: Float32Array;
-    mediaAvaliacao!: Float32Array;
+    
+    mediaAvaliacao?: Float32Array;
 
    // favoritos?: Favorito;
 
