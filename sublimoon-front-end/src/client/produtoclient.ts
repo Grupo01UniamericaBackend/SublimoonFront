@@ -9,7 +9,7 @@ import { Produto } from '@/model/produto';
 
         constructor() {
             this.axiosClient = axios.create({
-                baseURL: 'http://localhost:8080/api/categoria',
+                baseURL: 'http://localhost:8081/api/produto',
                 headers: {'Content-type' : 'application/json'}
             });
         }
