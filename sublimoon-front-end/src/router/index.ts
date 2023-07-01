@@ -24,6 +24,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/CadastrarProduto',
     name: 'cadastar-produto-view',
     component: () => import('../views/ProdutoView.vue/ProdutoCad.vue')
+  },
+  {
+    path: '/Carrinho',
+    name: 'carrinho-main',
+    component: () => import('../views/CarrinhoView.vue/CarrinhoPag.vue')
+  },
+  {
+    path: '/Favoritos',
+    name: 'favoritos-main',
+    component: () => import('../views/FavoritosView.vue/FavoritosPag.vue')
+  },
+  {
+    path: '/Estoque',
+    name: 'estoque-main',
+    component: () => import('../views/EstoqueView.vue/EstoquePag.vue')
   }
 ]
 

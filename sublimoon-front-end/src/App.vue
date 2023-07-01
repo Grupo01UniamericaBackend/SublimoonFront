@@ -2,6 +2,7 @@
 
 <NavBar/>
 <Footer/>
+
 </template>
 
 <script lang="ts">

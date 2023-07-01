@@ -9,13 +9,12 @@
             <button id="botaoSearch">🔍</button> -->
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
             </div>
-            <router-link to="" class="categ">Masculino</router-link>
-            <router-link to="" class="categ">Feminino</router-link>
             <router-link to="" class="categ">Canecas</router-link>
-            <router-link to="" class="categ">Garrafas</router-link>
-            <router-link to="" class="categ">Personalizados</router-link>
-            <router-link to="" class="icons">🛒</router-link>
-            <router-link to="" class="icons">💙</router-link>
+            <router-link to="" class="categ">Camiseta</router-link>
+            <router-link to="" class="categ">Garrafinhas</router-link>
+            <router-link to="" class="categ">Copos-Térmicos</router-link>
+            <router-link to="/Carrinho" class="icons">🛒</router-link>
+            <router-link to="/Favoritos" class="icons">💙</router-link>
             <router-link to="/Usuario" class="icons">👤</router-link>
          </nav>
          <div class="barra"></div>
