@@ -13,7 +13,10 @@
         <div class="card-body">
           <h5 class="card-title">{{ item.nome }}</h5>
           <p class="card-text">R${{ item.preco }}</p>
-          <a href="#" class="btn btn-primary">Visualizar produto</a>
+          <router-link type="button" class="btn btn-sm btn-primary" 
+                        :to="{ name: 'produto', query: { id: item.id } } ">
+                      Visualizar produto
+                    </router-link>
         </div>
       </div>
     </div>
