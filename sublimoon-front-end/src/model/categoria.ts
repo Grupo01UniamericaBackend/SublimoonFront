@@ -1,5 +1,6 @@
-import { AbstractEntity } from "./abstract-entity";
-
-export class Categoria extends AbstractEntity{
-    categorias!: String;
-}
+export enum Categoria {
+    CANECA = 'CANECA',
+    GARRAFINHA = 'GARRAFINHA',
+    CAMISETA = 'CAMISETA',
+    COPOTERMICO = 'COPOTERMICO',
+  }

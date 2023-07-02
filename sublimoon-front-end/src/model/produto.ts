@@ -9,7 +9,7 @@ export class Produto extends AbstractEntity{
 
     nome!: String;
 
-    categorias?: Categoria;
+    categoria!: Categoria;
 
     cor!: Cor;
     descricao!: String;

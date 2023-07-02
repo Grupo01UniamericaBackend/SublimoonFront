@@ -23,7 +23,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/CadastrarProduto',
     name: 'cadastar-produto-view',
-    component: () => import('../views/ProdutoView.vue/ProdutoCad.vue')
+    component: () => import('../views/ProdutoView.vue/ProdutoCad.vue'),
+    children: [
+      {
+        path: '/CadastrarProduto',
+        name: 'produto-formulario-editar-view',
+        component: () => import(/* webpackChunkName: "about" */ '../views/ProdutoView.vue/ProdutoCad.vue')
+      },
+      {
+        path: '/cadastroproduto',
+        name: 'produto-formulario-excluir-view',
+        component: () => import(/* webpackChunkName: "about" */ '../views/ProdutoView.vue/ProdutoCad.vue')
+      }
+    ]
   },
   {
     path: '/Carrinho',
