@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/PgInicialView.vue')
   },
   {
+    path: '/produto',
+    name: 'produto',
+    component: () => import('@/views/ProdutoView.vue/ProdutoDetalhado.vue')
+  },
+  {
     path: '/caneca',
     name: 'caneca-categoria',
     component: () => import('@/views/Categorias/CanecaCategoria.vue')
