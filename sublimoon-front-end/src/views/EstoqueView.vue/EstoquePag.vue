@@ -1,6 +1,6 @@
 <template>
     <div class="container_estoque">
-
+        <router-link type="button" class="btn btn-primary" to="/CadastrarProduto">Cadastrar Produto </router-link>
 
 
 
@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+
 
 
 </script>
