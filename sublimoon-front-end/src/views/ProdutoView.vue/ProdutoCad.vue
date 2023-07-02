@@ -193,7 +193,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .container {
   min-height: 67vh;
   display: flex;

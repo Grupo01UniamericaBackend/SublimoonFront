@@ -9,12 +9,12 @@
             <button id="botaoSearch">🔍</button> -->
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
       </div>
-      <router-link to="" class="categ">Canecas</router-link>
-      <router-link to="" class="categ">Camiseta</router-link>
-      <router-link to="" class="categ">Garrafinhas</router-link>
-      <router-link to="" class="categ">Copos-Térmicos</router-link>
-      <router-link to="/Carrinho" class="icons">🛒</router-link>
-      <router-link to="/Favoritos" class="icons">💙</router-link>
+      <router-link  to="/caneca"  class="categ">Canecas</router-link>
+      <router-link to="/camiseta" class="categ">Camiseta</router-link>
+      <router-link to="/garrafinha"  class="categ">Garrafinhas</router-link>
+      <router-link to="/copos"  class="categ">Copos-Térmicos</router-link>
+      <router-link to="/Carrinho"  class="icons">🛒</router-link>
+      <router-link to="/Favoritos"  class="icons">💙</router-link>
           <p data-bs-toggle="dropdown" id="iconP">👤</p>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/usuario">Usuário</a></li>
