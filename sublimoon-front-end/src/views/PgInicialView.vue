@@ -44,12 +44,19 @@
         class="card"
         style="width: 18rem"
       >
-      
-      <img src="{{ item.imagem }}" class="card-img-top" alt="..." />
+        <img src="{{ item.imagem }}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ item.nome }}</h5>
           <p class="card-text">R${{ item.preco }}</p>
-          <a href="#" class="btn btn-primary">Visualizar produto</a>
+          <router-link
+            type="button"
+            class="btn btn-sm btn-primary"
+            :to="{ name: 'produto', query: { id: item.id } }"
+          >
+            Visualizar produto
+          </router-link>
+          <img  class="fav"  @click="Favoritar()" v-if="item.ativo == false" src="../assets/contorno-em-forma-de-coracao.png" />
+          <img class="fav" @click="Desfavoritar(item)" v-if="item.ativo == true" src="../assets/silhueta-em-forma-de-coracao.png" />
         </div>
       </div>
     </div>
@@ -61,14 +68,14 @@ import { defineComponent } from "vue";
 
 import ProdutoClient from "@/client/produtoclient";
 import { Produto } from "@/model/produto";
-
+import produtoclient from "@/client/produtoclient";
 
 export default defineComponent({
   name: "ProdutoLista",
   data() {
     return {
-      ProdutosList: new Array<Produto>()
-      
+      ProdutosList: new Array<Produto>(),
+      produto: new Produto(),
     };
   },
   mounted() {
@@ -81,12 +88,24 @@ export default defineComponent({
           this.ProdutosList = sucess;
 
           console.log(this.ProdutosList);
-          
-          
         })
         .catch((error) => {
           console.log(error);
         });
+    },
+    Favoritar() {
+      ProdutoClient.fav(this.produto.id, this.produto)
+        .then((sucess) => {
+          this.produto = new Produto();
+
+         console.log(sucess)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    },
+    Desfavoritar(item: Produto) {
+      item.ativo = false;
     },
   },
 });
@@ -110,5 +129,12 @@ export default defineComponent({
 #produtooo {
   display: flex;
   flex-direction: row;
+}
+
+.fav{
+
+width: 50px;
+
+
 }
 </style>

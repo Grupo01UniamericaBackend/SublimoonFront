@@ -21,6 +21,40 @@ import { Produto } from '@/model/produto';
                 return Promise.reject(error.response.data)
             }
         }
+
+        public async findByCaneca() : Promise<Produto[]> {
+            try {
+                return (await this.axiosClient.get<Produto[]>(`/categoria/CANECA`)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+        public async findByCamiseta() : Promise<Produto[]> {
+            try {
+                return (await this.axiosClient.get<Produto[]>(`/categoria/CAMISETA`)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+        public async findByGarrafinha() : Promise<Produto[]> {
+            try {
+                return (await this.axiosClient.get<Produto[]>(`/categoria/GARRAFINHA`)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+        public async findByCopo() : Promise<Produto[]> {
+            try {
+                return (await this.axiosClient.get<Produto[]>(`/categoria/COPOTERMICO`)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+    
     
         public async listaAll(): Promise<Produto[]> {
             try {
@@ -41,6 +75,14 @@ import { Produto } from '@/model/produto';
         public async editar(id: number,produto: Produto): Promise<string> {
             try {
                 return (await this.axiosClient.put<string>(`/${produto.id}`, produto)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+        public async fav(id: number,produto: Produto): Promise<string> {
+            try {
+                return (await this.axiosClient.put<string>(`/fav/${produto.id}`, produto)).data
             } catch (error:any) {
                 return Promise.reject(error.response.data)
             }
