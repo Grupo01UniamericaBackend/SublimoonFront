@@ -28,10 +28,7 @@
                     :to="{ name: 'EditaUsuario', query: { id: item.id, form: 'editar' } } "> 
                   Editar 
                 </router-link>
-                <router-link type="button" class="btn btn-sm btn-secondary" 
-                    :to="{ name: 'ExcluiUsuario', query: { id: item.id, form: 'deletaCliente' } } ">
-                  Excluir
-                </router-link>
+              
               </div>
             </th>
     </tr>
