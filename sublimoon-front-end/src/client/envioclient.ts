@@ -9,7 +9,7 @@ import { Envio } from '@/model/envio';
 
         constructor() {
             this.axiosClient = axios.create({
-                baseURL: 'http://localhost:8080/api/envio',
+                baseURL: 'http://localhost:8081/api/envio',
                 headers: {'Content-type' : 'application/json'}
             });
         }

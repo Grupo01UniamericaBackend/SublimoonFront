@@ -8,7 +8,7 @@ import { Cliente } from '@/model/cliente';
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/cliente',
+            baseURL: 'http://localhost:8081/api/cliente',
             headers: {'Content-type' : 'application/json'}
         });
     }

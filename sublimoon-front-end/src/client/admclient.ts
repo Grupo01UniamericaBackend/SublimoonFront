@@ -7,7 +7,7 @@ import { Adm } from '@/model/adm';
 
         constructor() {
             this.axiosClient = axios.create({
-                baseURL: 'http://localhost:8080/api/adm',
+                baseURL: 'http://localhost:8081/api/adm',
                 headers: {'Content-type' : 'application/json'}
             });
         }

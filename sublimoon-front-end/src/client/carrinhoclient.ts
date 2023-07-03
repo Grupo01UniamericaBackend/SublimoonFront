@@ -8,7 +8,7 @@ import { Carrinho } from '@/model/carrinho';
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/carrinho',
+            baseURL: 'http://localhost:8081/api/carrinho',
             headers: {'Content-type' : 'application/json'}
         });
     }

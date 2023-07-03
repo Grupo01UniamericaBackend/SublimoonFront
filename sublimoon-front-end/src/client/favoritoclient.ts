@@ -8,7 +8,7 @@ import { Favorito } from '@/model/favorito';
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/categoria',
+            baseURL: 'http://localhost:8081/api/favorito',
             headers: {'Content-type' : 'application/json'}
         });
     }
@@ -39,15 +39,16 @@ import { Favorito } from '@/model/favorito';
 
     public async editar(id: number,favorito: Favorito): Promise<string> {
         try {
-            return (await this.axiosClient.put<string>(`/${favorito.id}`, favorito)).data
+            return (await this.axiosClient.put<string>(`/${id}`, favorito)).data
         } catch (error:any) {
             return Promise.reject(error.response.data)
         }
     }
 
-    public async deletaFavorito(id: number): Promise<string> {
+   
+    public async deletaFavorito(id: number, idProduto: number): Promise<string> {
         try {
-            return (await this.axiosClient.delete<string>(`/${id}`)).data
+            return (await this.axiosClient.delete<string>(`/delete/${id}/${idProduto}`)).data
         } catch (error:any) {
             return Promise.reject(error.response.data)
         }
