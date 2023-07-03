@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/camiseta',
-    name: 'camiseta -categoria',
+    name: 'camiseta-categoria',
     component: () => import('@/views/Categorias/CamisetaCategoria.vue')
   },
   {

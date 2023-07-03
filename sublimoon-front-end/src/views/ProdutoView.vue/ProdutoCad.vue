@@ -63,6 +63,14 @@
           v-model="produto.tamanho"
         />
 
+        <label for="img">Quantidade do produto:</label>
+        <input
+          type="text"
+          id="tamanho"
+          name="tamanho"
+          v-model="produto.quantidade"
+        />
+
         <button
           v-if="form === undefined"
           type="button"
