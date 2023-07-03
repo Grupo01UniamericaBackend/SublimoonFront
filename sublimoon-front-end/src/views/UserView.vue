@@ -25,11 +25,11 @@
       <th class="col-md-2">
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <router-link type="button" class="btn btn-sm btn-info" 
-                    :to="{ name: 'produto-formulario-editar-view', query: { id: item.id, form: 'editar' } } "> 
+                    :to="{ name: 'EditaUsuario', query: { id: item.id, form: 'editar' } } "> 
                   Editar 
                 </router-link>
                 <router-link type="button" class="btn btn-sm btn-secondary" 
-                    :to="{ name: 'produto-formulario-excluir-view', query: { id: item.id, form: 'deletaProduto' } } ">
+                    :to="{ name: 'ExcluiUsuario', query: { id: item.id, form: 'deletaCliente' } } ">
                   Excluir
                 </router-link>
               </div>

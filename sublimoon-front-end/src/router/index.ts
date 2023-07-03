@@ -46,6 +46,18 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/UserView.vue')
   },
   {
+    path: '/EditarUsuario',
+    name: 'EditaUsuario',
+    component: () => import('../views/EditDeleteUser.vue'),
+    children: [
+      {
+        path: '/EditarUsuario',
+        name: 'ExcluiUsuario',
+        component: () => import(/* webpackChunkName: "about" */ '../views/EditDeleteUser.vue')
+      }
+    ]
+  },
+  {
     path: '/CadastrarProduto',
     name: 'cadastar-produto-view',
     component: () => import('../views/ProdutoView.vue/ProdutoCad.vue'),
