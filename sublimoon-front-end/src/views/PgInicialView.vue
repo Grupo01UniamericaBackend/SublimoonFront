@@ -60,8 +60,8 @@
           >
             Visualizar produto
           </router-link>
-          <img  class="fav"  @click="Favoritar(item)" v-if="item.ativo == false" src="../assets/contorno-em-forma-de-coracao.png" />
-          <img class="fav" @click="Desfavoritar(item)" v-if="item.ativo == true" src="../assets/silhueta-em-forma-de-coracao.png" />
+          <img  class="fav"  @click="Favoritar(item)" v-if="item.ativo == true" src="../assets/contorno-em-forma-de-coracao.png" />
+          <img class="fav" @click="Desfavoritar(item)" v-if="item.ativo == false" src="../assets/silhueta-em-forma-de-coracao.png" />
         </div>
       </div>
     </div>
@@ -93,6 +93,19 @@ export default defineComponent({
   
   },
   methods: {
+
+    findAllProd() {
+        ProdutoClient.listaAll()
+          .then(sucess => {
+            this.ProdutosList = sucess
+          })
+          .catch(error => {
+            console.log(error);
+          })},
+    
+    reloadPage() {
+      location.reload();
+    },
     findAll() {
       FavoritoClient.Favorito(1)
         .then((sucess) => {
@@ -110,7 +123,7 @@ export default defineComponent({
       FavoritoClient.editar(1, this.favorito)
         .then((sucess) => {
           this.favorito = new Favorito();
-
+          location.reload();
          console.log(sucess)
         })
         .catch((error) => {
@@ -122,7 +135,7 @@ export default defineComponent({
       FavoritoClient.deletaFavorito(1, item.id)
       .then((sucess) => {
           this.favorito = new Favorito();
-
+          location.reload();
          console.log(sucess)
         })
         .catch((error) => {

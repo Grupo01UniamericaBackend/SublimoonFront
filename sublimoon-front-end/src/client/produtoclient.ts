@@ -63,6 +63,14 @@ import { Produto } from '@/model/produto';
                 return Promise.reject(error.response.data)
             }
         }
+
+        public async ListaAllFav(): Promise<Produto[]> {
+            try {
+                return (await this.axiosClient.get<Produto[]>(`/favorito/lista`)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
     
         public async cadastrar(produto: Produto): Promise<string> {
             try {
