@@ -49,8 +49,10 @@
       >
         <img :src="item.imagem" class="card-img-top" alt="..." />
         <div class="card-body">
+
           <h5 class="card-title">{{ item.nome }}</h5>
           <p class="card-text">R$ {{ item.preco }}</p>
+
           <router-link
             type="button"
             class="btn btn-sm btn-primary"
@@ -80,15 +82,19 @@ export default defineComponent({
     return {
       ProdutosList: new Array<Produto>(),
       produto: new Produto(),
-      favorito: new Favorito()
+      favorito: new Favorito(),
+      isTrue: new Boolean(),
+      coracao: new Boolean()
     };
   },
   mounted() {
     this.findAll();
+   
+  
   },
   methods: {
     findAll() {
-      ProdutoClient.listaAll()
+      FavoritoClient.Favorito(1)
         .then((sucess) => {
           this.ProdutosList = sucess;
 
@@ -98,33 +104,33 @@ export default defineComponent({
           console.log(error);
         });
     },
-    Favoritar(item: Produto) {
+       Favoritar(item: Produto) {
 
-this.favorito.produtos = [item]
-FavoritoClient.editar(1, this.favorito)
-  .then((sucess) => {
-    this.favorito = new Favorito();
+      this.favorito.produtos = [item]
+      FavoritoClient.editar(1, this.favorito)
+        .then((sucess) => {
+          this.favorito = new Favorito();
 
-   console.log(sucess)
-  })
-  .catch((error) => {
-    console.log(error)
-  });
-},
-Desfavoritar(item: Produto) {
+         console.log(sucess)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    },
+    Desfavoritar(item: Produto) {
+      
+      FavoritoClient.deletaFavorito(1, item.id)
+      .then((sucess) => {
+          this.favorito = new Favorito();
 
-FavoritoClient.deletaFavorito(3, item.id)
-.then((sucess) => {
-    this.favorito = new Favorito();
-
-   console.log(sucess)
-  })
-  .catch((error) => {
-    console.log(error)
-  });
-
-},
-},
+         console.log(sucess)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+      
+    },
+  },
 });
 </script>
 
