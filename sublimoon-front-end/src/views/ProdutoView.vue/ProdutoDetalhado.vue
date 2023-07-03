@@ -2,10 +2,8 @@
   <div class="mainprod">
     <div class="containerr" >
       <div class="imagemproduto">
-        <img
-          style="width: 23rem"
-          src="https://images.tcdn.com.br/img/img_prod/978182/travesseiro_hotelaria_19_1_deca24665c6d836bf11ae1e704bc6032_20230228103400.jpg"
-        />
+
+        <img :src="produto.imagem" class="card-img-top" alt="..."   style="width: 23rem"/>
       </div>
 
       <div class="tituloprod">
