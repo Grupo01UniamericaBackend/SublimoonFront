@@ -55,8 +55,8 @@
           >
             Visualizar produto
           </router-link>
-          <img  class="fav"  @click="Favoritar(item)" v-if="item.ativo == false" src="../assets/contorno-em-forma-de-coracao.png" />
-          <img class="fav" @click="Desfavoritar(item)" v-if="item.ativo == true" src="../assets/silhueta-em-forma-de-coracao.png" />
+          <img  class="fav"  @click="Favoritar(item)" v-if=" item.ativo == true" src="../assets/contorno-em-forma-de-coracao.png" />
+          <img class="fav" @click="Desfavoritar(item)" v-if=" item.ativo == false" src="../assets/silhueta-em-forma-de-coracao.png" />
         </div>
       </div>
     </div>
@@ -77,15 +77,20 @@ export default defineComponent({
     return {
       ProdutosList: new Array<Produto>(),
       produto: new Produto(),
-      favorito: new Favorito()
+      favorito: new Favorito(),
+      isTrue: new Boolean(),
+      coracao: new Boolean()
+     
     };
   },
   mounted() {
     this.findAll();
+   
+  
   },
   methods: {
     findAll() {
-      ProdutoClient.listaAll()
+      FavoritoClient.Favorito(1)
         .then((sucess) => {
           this.ProdutosList = sucess;
 
@@ -95,7 +100,7 @@ export default defineComponent({
           console.log(error);
         });
     },
-    Favoritar(item: Produto) {
+       Favoritar(item: Produto) {
 
       this.favorito.produtos = [item]
       FavoritoClient.editar(1, this.favorito)
@@ -110,7 +115,7 @@ export default defineComponent({
     },
     Desfavoritar(item: Produto) {
       
-      FavoritoClient.deletaFavorito(3, item.id)
+      FavoritoClient.deletaFavorito(1, item.id)
       .then((sucess) => {
           this.favorito = new Favorito();
 
