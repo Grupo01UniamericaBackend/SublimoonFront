@@ -53,6 +53,8 @@ import { Produto } from '@/model/produto';
                 return Promise.reject(error.response.data)
             }
         }
+
+    
     
         public async listaAll(): Promise<Produto[]> {
             try {
@@ -73,6 +75,14 @@ import { Produto } from '@/model/produto';
         public async editar(id: number,produto: Produto): Promise<string> {
             try {
                 return (await this.axiosClient.put<string>(`/${produto.id}`, produto)).data
+            } catch (error:any) {
+                return Promise.reject(error.response.data)
+            }
+        }
+
+        public async fav(id: number,produto: Produto): Promise<string> {
+            try {
+                return (await this.axiosClient.put<string>(`/fav/${produto.id}`, produto)).data
             } catch (error:any) {
                 return Promise.reject(error.response.data)
             }

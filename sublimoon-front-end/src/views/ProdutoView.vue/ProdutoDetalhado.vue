@@ -59,6 +59,7 @@ export default defineComponent({
   methods: {
     findById(id: number) {
       ProdutoClient.findById(id)
+      
         .then((sucess) => {
           this.produto = sucess;
         })
