@@ -11,7 +11,9 @@
         class="card"
         style="width: 18rem"
       >
+
         <img :src="item.imagem" class="card-img-top" alt="..."  />
+
         <div class="card-body">
           <h5 class="card-title">{{ item.nome }}</h5>
           <p class="card-text">R${{ item.preco }}</p>
@@ -76,6 +78,8 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 3vw;
 }
 
 h2{

@@ -75,6 +75,8 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 3vw;
 }
 
 h2{
