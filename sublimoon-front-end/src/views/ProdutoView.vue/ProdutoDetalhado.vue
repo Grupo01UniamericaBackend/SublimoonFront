@@ -12,7 +12,7 @@
         <h3>R${{ produto.preco }}</h3>
 
         <div>
-          <button type="button" class="btn btn-success">
+          <button type="button" class="btn btn-info" id="botaoadd">
             Adicionar ao carrinho
           </button>
         </div>
@@ -71,21 +71,15 @@ export default defineComponent({
 
 <style lang="scss">
 .containerr {
-
-  
-  width: 120%;
-  
-
-  display: flex;
-  
-  
+  width: 100%;
+  display: flex;  
+  color: #153b75;
 }
 
 .imagemproduto {
   margin-top: 40px;
+  margin-bottom: 50px;
   width: 50vw;
-  height: 50vh;
- 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +95,13 @@ export default defineComponent({
     justify-content: space-between;
   
 }
-
+#botaoadd{
+  width: 50%;
+  height: 150%;
+  font-size: 2rem;
+  background-color: #153b75;
+  color: white;
+}
 .tituloprod h2{
 
 font-size: 60px;
@@ -109,12 +109,12 @@ font-size: 60px;
 }
 
 .mainprod {
- 
   min-height: 80vh;
+  margin-top: 50px;
 }
 
 .card-text {
-  color: black;
+  color: #153b75;
 }
 
 #produtooo {
@@ -124,11 +124,12 @@ font-size: 60px;
 .descricaoo{
 
 min-height: 20vh;
+width: 80%;
+margin-left: 10%;
 display: flex;
 flex-direction: column;
+justify-content: flex-start;
 align-items: flex-start;
-justify-content: center;
-
 
 }
 </style>

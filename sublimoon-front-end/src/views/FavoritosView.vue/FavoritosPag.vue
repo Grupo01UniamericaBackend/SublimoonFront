@@ -22,7 +22,7 @@
         </button>
       </div>
       <div class="destaque">
-        <h1 id="h1dest">Nossos destaques:</h1>
+        <h1 id="h1dest">Seus Favoritos:</h1>
       </div>
   
       <div class="col-md-12 text-start" v-for="item in ProdutosList"

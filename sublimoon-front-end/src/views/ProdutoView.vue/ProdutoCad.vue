@@ -74,7 +74,8 @@
         <button
           v-if="form === undefined"
           type="button"
-          class="btn btn-success"
+          class="btn btn-primary"
+          id="cadastrarbutton"
           @click="onClickCadastrar()"
         >
           Cadastrar
@@ -212,5 +213,18 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.divForm{
+  height: 80vh;
+  margin-top: 20px;
+}
+input{
+  border-radius: 6px;
+}
+select{
+  border-radius: 6px;
+}
+#cadastrarbutton{
+ margin-top: 20px;
 }
 </style>
