@@ -161,6 +161,7 @@ export default defineComponent({
 
 .fav {
   width: 2rem;
+  margin-left: 70px;
 }
 .destaque {
   height: 10vh;
