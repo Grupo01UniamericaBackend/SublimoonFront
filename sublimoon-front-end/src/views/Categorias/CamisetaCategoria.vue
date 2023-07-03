@@ -1,6 +1,7 @@
 <template>
   <div class="container">
    
+    <h2><strong>Você está em: </strong>Camisetas</h2>
 
     <div class="col-md-12 text-start" id="produtooo">
       <div
@@ -73,5 +74,11 @@ export default defineComponent({
 #produtooo {
   display: flex;
   flex-direction: row;
+  margin-top: 5vh;
+}
+
+h2{
+  text-decoration:underline;
+  color:#153b75 ;
 }
 </style>

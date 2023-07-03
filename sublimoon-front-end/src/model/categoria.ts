@@ -2,5 +2,5 @@ export enum Categoria {
     CANECA = 'CANECA',
     GARRAFINHA = 'GARRAFINHA',
     CAMISETA = 'CAMISETA',
-    COPOTERMICO = 'COPOTERMICO',
+    COPOTERMICO = 'COPO-TERMICO',
   }

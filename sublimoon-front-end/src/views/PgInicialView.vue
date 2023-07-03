@@ -36,6 +36,9 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <div class="destaque">
+      <h1 id="h1dest">Nossos destaques:</h1>
+    </div>
 
     <div class="col-md-12 text-start" id="produtooo">
       <div
@@ -44,10 +47,10 @@
         class="card"
         style="width: 18rem"
       >
-        <img src="{{ item.imagem }}" class="card-img-top" alt="..." />
+        <img :src="item.imagem" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ item.nome }}</h5>
-          <p class="card-text">R${{ item.preco }}</p>
+          <p class="card-text">R$ {{ item.preco }}</p>
           <router-link
             type="button"
             class="btn btn-sm btn-primary"
@@ -119,7 +122,6 @@ export default defineComponent({
 }
 #carousel {
   width: 100%;
-  background-color: purple;
 }
 
 .card-text {
@@ -129,12 +131,25 @@ export default defineComponent({
 #produtooo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3vw;
+  margin-bottom: 8vh;
 }
 
 .fav{
-
-width: 50px;
-
-
+width: 2rem;
+}
+.destaque{
+  height: 10vh;
+ // background-color: rgb(234, 123, 234);
+  color: #153b75;
+  display: flex;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+h1{
+  font-weight: 800;
+  font-family:sans-serif;
 }
 </style>

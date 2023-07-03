@@ -1,6 +1,7 @@
 <template>
   <div class="container">
    
+    <h2><strong>Você está em: </strong>Canecas</h2>
 
     <div class="col-md-12 text-start" id="produtooo">
       <div
@@ -60,6 +61,7 @@ export default defineComponent({
   //background-color: red;
   min-height: 100vh;
   width: 100%;
+  margin-top: 5vh;
 }
 #carousel {
   width: 100%;
@@ -73,5 +75,11 @@ export default defineComponent({
 #produtooo {
   display: flex;
   flex-direction: row;
+  margin-top: 5vh;
+}
+
+h2{
+  text-decoration:underline;
+  color:#153b75 ;
 }
 </style>
