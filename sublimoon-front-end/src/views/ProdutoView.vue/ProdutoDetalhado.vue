@@ -10,7 +10,12 @@
         <h2><strong>    {{ produto.nome }}</strong></h2>
 
         <h3>R${{ produto.preco }}</h3>
+        <label>Quantidade:</label>
+        <div>
+          
+          <input type="number" min="1" value="1" style="width: 60px; height:50px;" >
 
+      </div>
         <div>
           <button type="button" class="btn btn-info" id="botaoadd">
             Adicionar ao carrinho
@@ -85,6 +90,13 @@ export default defineComponent({
   justify-content: center;
  
 }
+
+.tituloprod h3{
+
+font-size: 50px;
+
+
+}
 .tituloprod {
   
   width: 60vw;
@@ -122,7 +134,7 @@ font-size: 60px;
   flex-direction: row;
 }
 .descricaoo{
-
+  color: #153b75;
 min-height: 20vh;
 width: 80%;
 margin-left: 10%;
@@ -130,6 +142,14 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
+
+
+}
+
+.descricaoo h2{
+
+
+font-size: 55px;
 
 }
 </style>
