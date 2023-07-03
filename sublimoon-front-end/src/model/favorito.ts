@@ -6,7 +6,7 @@ export class Favorito extends AbstractEntity{
     
     //produtoId?: number;
 
-    produtos?: Produto;
+    produtos?: Array<Produto>;
 
     cliente?: Cliente;
 

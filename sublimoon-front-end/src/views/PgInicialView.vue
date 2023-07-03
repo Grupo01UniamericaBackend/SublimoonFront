@@ -44,9 +44,9 @@
         class="card"
         style="width: 18rem"
       >
-        <img src="{{ item.imagem }}" class="card-img-top" alt="..." />
+        <img :src="item.imagem" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">{{ item.nome }}</h5>
+          <h5 class="card-title">{{ item.nome}} aaaa</h5>
           <p class="card-text">R${{ item.preco }}</p>
           <router-link
             type="button"
@@ -55,7 +55,7 @@
           >
             Visualizar produto
           </router-link>
-          <img  class="fav"  @click="Favoritar()" v-if="item.ativo == false" src="../assets/contorno-em-forma-de-coracao.png" />
+          <img  class="fav"  @click="Favoritar(item)" v-if="item.ativo == false" src="../assets/contorno-em-forma-de-coracao.png" />
           <img class="fav" @click="Desfavoritar(item)" v-if="item.ativo == true" src="../assets/silhueta-em-forma-de-coracao.png" />
         </div>
       </div>
@@ -68,7 +68,8 @@ import { defineComponent } from "vue";
 
 import ProdutoClient from "@/client/produtoclient";
 import { Produto } from "@/model/produto";
-import produtoclient from "@/client/produtoclient";
+import FavoritoClient from "@/client/favoritoclient";
+import { Favorito } from "@/model/favorito";
 
 export default defineComponent({
   name: "ProdutoLista",
@@ -76,6 +77,7 @@ export default defineComponent({
     return {
       ProdutosList: new Array<Produto>(),
       produto: new Produto(),
+      favorito: new Favorito()
     };
   },
   mounted() {
@@ -93,10 +95,12 @@ export default defineComponent({
           console.log(error);
         });
     },
-    Favoritar() {
-      ProdutoClient.fav(this.produto.id, this.produto)
+    Favoritar(item: Produto) {
+
+      this.favorito.produtos = [item]
+      FavoritoClient.editar(1, this.favorito)
         .then((sucess) => {
-          this.produto = new Produto();
+          this.favorito = new Favorito();
 
          console.log(sucess)
         })
@@ -105,7 +109,17 @@ export default defineComponent({
         });
     },
     Desfavoritar(item: Produto) {
-      item.ativo = false;
+      
+      FavoritoClient.deletaFavorito(3, item.id)
+      .then((sucess) => {
+          this.favorito = new Favorito();
+
+         console.log(sucess)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+      
     },
   },
 });
