@@ -1,6 +1,6 @@
 <template>
     <div class="container_estoque">
-        <router-link type="button" class="btn btn-primary" to="/CadastrarProduto">Cadastrar Produto </router-link>
+        <router-link style="margin-bottom: 40px" type="button" class="btn btn-primary" to="/CadastrarProduto">Cadastrar Produto </router-link>
 
         <table class="table">
   <thead>
@@ -9,6 +9,7 @@
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>
       <th scope="col">Categoria</th>
+      <th scope="col">Em estoque</th>
       <th scope="col">Opções</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
       <td>{{ item.nome }}</td>
       <td>{{ item.preco }}</td>
       <td>{{ item.categoria }}</td>
+      <td>{{ item.quantidade }}</td>
       <th class="col-md-2">
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <router-link type="button" class="btn btn-sm btn-info" 
